@@ -27,13 +27,13 @@
 #### ⚙ Em seguida, entre na pasta do projeto
     - cd Projeto_ViaCep
 
-### ⚙ Certifique-se de abrir dois terminais, um para entrar na pasta do frontend e outro para entrar na pasta do backend, rode em cada uma delas
+#### ⚙ Certifique-se de abrir dois terminais, um para entrar na pasta do frontend e outro para entrar na pasta do backend, rode em cada uma delas
     - npm install
 
 ## ✔ Run App
 #### Basta executar o comando a seguir, tanto na pasta de front, quanto na de back:
     - npm start
 
-### Por padrão do React, o frontend roda na porta 3000, já o backend, que é a nossa api, se encontra na porta 3333.
+#### Por padrão do React, o frontend roda na porta 3000, já o backend, que é a nossa api, se encontra na porta 3333.
 
-                            #### With by 🖤 Jenniffer Rufino!
+                                 With by 🖤 Jenniffer Rufino!
