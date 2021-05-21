@@ -54,7 +54,7 @@ export default function Form() {
                             Consultar
                         </Button>
                     </form>
-                {console.log(error)}
+              
                 {error && <p>Erro! Digite Novamente!</p>}
 
                 {loading && !error && <p>Procurando...</p>}
