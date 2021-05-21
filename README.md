@@ -3,6 +3,8 @@
 <h3> 🚀 Sobre o projeto </h3>
 <p> Essa é uma aplicação real para ajudar um usuário a fazer a consulta de um CEP. Onde ao informar um CEP a tela apresentará informações de endereço como bairro, município e logradouro. Para tal foi criada uma um api rest com integração com o serviço ViaCEP e uma aplicação web. </p>
 
+![Pesquisar-CEP-Google-Chrome-2021-05-21-18-44-34](https://user-images.githubusercontent.com/44877004/119202086-807c6a80-ba66-11eb-9554-ddf9aadf721e.gif)
+
 <h3> 💻 Tecnologias utilizadas </h3>
 
 ### Backend
