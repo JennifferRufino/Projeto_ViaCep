@@ -52,7 +52,7 @@ export const Button = styled.button`
 export const CardInfo = styled.div`
     margin-top: 10px;
     width: 445px;
-    height: 240px;
+    height: 120px;
     background-color: #7ec200;
     color: #ffffff;
     padding: 20px;
@@ -78,7 +78,7 @@ export const Span = styled.span`
 `;
 
 export const ErrorPage = styled.p`
-    font-family: monospace;
+  font-family: monospace;
   font-weight: 500;
   color: red;
   display: flex;

@@ -1,18 +1,13 @@
 import {useState, useRef} from 'react';
 import api from '../../Services/api';
-import {Container, CardInfo, TituloDois, Input, Button, ErrorPage, TituloUm, Paragrafro, Span, Footer} from './styles';
+import {Container, CardInfo, TituloDois, Input, Button, TituloUm, Paragrafro, Span, Footer} from './styles';
 
 interface Props {
     logradouro: string,
     localidade: string,
     uf: string,
-    complemento: string,
     bairro: string,
-    ibge: string,
     cep: string,
-    gia: string,
-    ddd: string,
-    siafi: string,
     erro?: any
 }
 
@@ -26,14 +21,11 @@ export default function Form() {
     const handleSubmit = (evento) => {
         evento.preventDefault();
 
-        if(buscaInput.current?.value === '') {
-            alert('Insira o CEP!');
-        }
-        console.log(buscaInput);
         async function axiosCEP() {
             setLoading(true);
             const response = await api.get(`/${buscaInput.current?.value}`)
-            if(response.status === 400 || response.statusText === 'Not Found'){
+            console.log(response.data);
+            if(response.data.error){
                 setError(true);
             }else {
                 setError(false);
@@ -56,33 +48,24 @@ export default function Form() {
                             placeholder="Informe o CEP"
                             required
                             ref = {buscaInput}
-                            maxLength = {8}
+                            maxLength = {9}
                         />
                         <Button type="submit">
                             Consultar
                         </Button>
                     </form>
+                {console.log(error)}
+                {error && <p>Erro! Digite Novamente!</p>}
 
-                {loading && error && <ErrorPage>Insira um CPF válido!</ErrorPage>} 
-                
-                {/* Exibe se estiver carregando */}
-                {loading && !error && <p>Procurando....</p>}
+                {loading && !error && <p>Procurando...</p>}
                     
-                {!loading && !data?.erro && data && (
+                {!loading && !error && data && (
                     <>
                         <CardInfo>
                             <TituloUm>Informações: </TituloUm>
                             <Paragrafro>
-                                <Span>Cep: </Span>
-                                <Span>{data.cep}</Span>
-                            </Paragrafro>
-                            <Paragrafro>
                                 <Span>Logradouro: </Span>
                                 <Span>{data.logradouro}</Span>
-                            </Paragrafro>
-                            <Paragrafro>
-                                <Span>Complemento: </Span>
-                                <Span>{data.complemento}</Span>
                             </Paragrafro>
                             <Paragrafro>
                                 <Span>Bairro: </Span>
@@ -96,30 +79,6 @@ export default function Form() {
                                 <Span> UF: </Span>
                                <Span>
                                     {data.uf}
-                                </Span>
-                            </Paragrafro>
-                            <Paragrafro>
-                               <Span> IBGE: </Span>
-                               <Span>
-                                    {data.ibge}
-                                </Span>
-                            </Paragrafro>
-                            <Paragrafro>
-                               <Span> GIA: </Span>
-                               <Span>
-                                    {data.gia}
-                                </Span>
-                            </Paragrafro>
-                            <Paragrafro>
-                               <Span> DDD: </Span>
-                               <Span>
-                                    {data.ddd}
-                                </Span>
-                            </Paragrafro>
-                            <Paragrafro>
-                               <Span> Siafi: </Span>
-                                <Span>
-                                    {data.siafi}
                                 </Span>
                             </Paragrafro>
                         </CardInfo>

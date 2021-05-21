@@ -11,7 +11,7 @@
     - Express
     - Cors
 
-### Fronted
+### Frontend
     - React Js
     - Styled Component
     - TypeScript
