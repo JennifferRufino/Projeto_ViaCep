@@ -31,6 +31,7 @@ module.exports = {
                     if(response.ok){
                         return response.json()
                     }
+                    //200 pois a api via CEP não devolvia nada chamando o 400 ou 401
                     return res.status(200).json({
                         message: 'Erro',
                         error: true
